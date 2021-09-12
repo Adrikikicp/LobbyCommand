@@ -9,30 +9,26 @@ public class Comando extends Command{
 
     private Object otro = ("survival, skywars");
 
-	public Comando() {
-        super("Lobby");
-   }
+    public cmd_hub() {
+        super("hub", (String)null, new String[] { "lobby" });
+    }
 	
-public void execute(CommandSender sender, String[] args) {
+   public void execute(CommandSender sender, String[] args) {
+	   
     if ((sender instanceof ProxiedPlayer)) {
-      ProxiedPlayer p = (ProxiedPlayer)sender;
-p.sendMessage(new ComponentBuilder ("Connecting you to the lobby!").color(ChatColor.RED).create());    
+	    
+      ProxiedPlayer p = (ProxiedPlayer) sender;
+ 	p.sendMessage(new ComponentBuilder ("Connecting you to the lobby!").color(ChatColor.RED).create());    
 
-p.connect(ProxyServer.getInstance().getServerInfo("lobby"));
+	p.connect(ProxyServer.getInstance().getServerInfo("lobby"));
 
-Object otro = ("survival, skywars");
-
-if("lobby".equals(otro)) {
+	Object otro = ("survival, skywars");
 	
-	this.otro = otro;
+	if("lobby".equals(otro)) {
 	
-	
-	
-	
-	
-}
- 
-}
-
-}
+      this.otro = otro;
+		
+       }   
+     }
+   }
 }
