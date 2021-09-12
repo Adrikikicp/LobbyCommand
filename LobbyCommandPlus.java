@@ -12,12 +12,20 @@ public class LobbyCommandPlus extends Plugin{
 
     public void onEnable(){
         
-        getLogger().info(ChatColor.translateAlternateColorCodes('&', "&cLobbyCommand has been enabled"));
-        ProxyServer.getInstance().getPluginManager().registerCommand(this, new Comando());
+     getLogger().info(ChatColor.translateAlternateColorCodes('&', "&cLobbyCommand has been enabled"));
+     ProxyServer.getInstance().getPluginManager().registerCommand(this, new Comando());
         
     }
     
+    
+    public void commandRegister(){
+        
+     ProxyServer.getInstance().getPluginManager().registerCommand(this, new Comando());
+  }
+    
     public void loadConfig() {
+        
+        
 
         try {
             Configuration configuration = ConfigurationProvider.getProvider(YamlConfiguration.class).load(new File(getDataFolder(), "config.yml"));
